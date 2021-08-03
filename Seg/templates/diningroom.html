@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block form_fields %}
+
+       <div class="row">
+            <div class="box">
+               <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Our
+                        <strong>Bedrooms</strong>
+                    </h2>
+                    <hr>
+               </div>
+
+                <div class="col-lg-12">
+                    {% for item in diningroom %}
+                        <a href="{% url 'diningroom2' item.id %}">
+                            <div class="col-sm-4 text-center">
+                                <img class="img-responsive" src="{{item.image.url}}" alt="">
+                                <h3>Mlily
+                                    <small>{{item.name}}</small>
+                                </h3>
+                            </div>
+                         </a>
+                    {% endfor %}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}
